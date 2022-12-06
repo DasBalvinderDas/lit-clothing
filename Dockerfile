@@ -7,4 +7,5 @@ COPY . .
 
 RUN npm run build
 FROM nginx:1.19
-COPY ./nginx/nginx.conf /etc/nginx/
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /lit-clothing/build /usr/share/nginx/html
