@@ -1,8 +1,8 @@
 FROM node:16.15.1 as build
 WORKDIR /lit-clothing
-
+COPY package.json /lit-clothing
 RUN npm install
-COPY . .
+COPY . /lit-clothing
 
 RUN npm run build
 FROM nginx:1.19
